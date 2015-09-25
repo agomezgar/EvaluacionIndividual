@@ -16,11 +16,11 @@ $crealumnos="CREATE TABLE IF NOT EXISTS alumnos(
 `locnac` text NOT NULL ,
 `provnac` text NOT NULL ,
 `correspondencia` text NOT NULL ,
-
 `dom` text NOT NULL ,
 `loc` text NOT NULL ,
 `prov` text NOT NULL ,
 `tf` text NOT NULL ,
+`movil` text NOT NULL ,
 `cp` varchar( 6 ) NOT NULL ,
 `padre` text NOT NULL ,
 `dnipadre` text NOT NULL ,
@@ -38,12 +38,13 @@ $crealumnos="CREATE TABLE IF NOT EXISTS alumnos(
 `h` varchar( 20 ) NOT NULL ,
 PRIMARY KEY ( `alumno` )
 ) ";
-mysql_query($crealumnos,$link) or die ("nO HE PODIDO CREAR LA TABLA DE ALUMNOS
+mysql_query($crealumnos,$link) or die ("ALGO FALLÓ
 ");
-
 $creamatriculas="CREATE TABLE IF NOT EXISTS matriculas(
 `alumno` varchar( 6 ) NOT NULL ,
 `matricula` varchar( 8 ) NOT NULL ,
+`apellidos` text NOT NULL ,
+`nombre` text NOT NULL ,
 `etapa` varchar( 4 ) NOT NULL ,
 `anno` varchar( 4 ) NOT NULL ,
 `tipo` varchar( 2 ) NOT NULL ,
@@ -54,11 +55,11 @@ $creamatriculas="CREATE TABLE IF NOT EXISTS matriculas(
 `centro` varchar( 10 ) NOT NULL ,
 `procedencia` varchar( 10 ) NOT NULL ,
 `estadomatricula` text NOT NULL ,
+`fecharesmatricula` text NOT NULL ,
 `numexpcentro` varchar( 5) NOT NULL ,
-
 PRIMARY KEY ( `alumno` )
-)  ";
-mysql_query($creamatriculas,$link) or die ("NO HE PODIDO CREAR LA TABLA DE MATRICULAS...
+) ";
+mysql_query($creamatriculas,$link) or die ("ALGO FALLÓ
 ");
 
 
